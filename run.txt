@@ -1,0 +1,15 @@
+git clone https://github.com/samihormi/Multi-Camera-Person-Tracking-and-Re-Identification
+cd Multi-Camera-Person-Tracking-and-Re-Identification
+conda create --name py37 python=3.7
+conda activate py37
+pip install -r requirements.txt
+conda install pytorch torchvision cudatoolkit -c pytorch
+
+
+python convert_y3.py /home/sysadm/Documents/recitation/Multi-Camera-Person-Tracking-and-Re-Identification/model_data/weights/yolov4.weights /home/sysadm/Documents/recitation/Multi-Camera-Person-Tracking-and-Re-Identification/model_data/models/yolov4.h5
+
+
+python convert_y3.py /home/sysadm/Documents/recitation/Multi-Camera-Person-Tracking-and-Re-Identification/model_data/weights/yolov3.weights /home/sysadm/Documents/recitation/Multi-Camera-Person-Tracking-and-Re-Identification/model_data/models/yolov3.h5
+
+
+python demo.py --videos /home/sysadm/Documents/recitation/Multi-Camera-Person-Tracking-and-Re-Identification/videos/init/Double1.mp4 /home/sysadm/Documents/recitation/Multi-Camera-Person-Tracking-and-Re-Identification/videos/init/Single1.mp4 --version v4
